@@ -23,14 +23,14 @@ public class LinkedList<K, V> {
 	}
 
 	/**
-	 * this method searches for the particular key in linked list.
+	 * method searches for the particular key in linked list.
 	 * 
 	 * @param
 	 * @return
 	 */
 	public MapNode<K, V> search(K key) {
 		MapNode<K, V> temp = head;
-		while (temp != null && temp.getNext() != null) {
+		while (temp != null) {
 			if (temp.getKey().equals(key)) {
 				return temp;
 			}
@@ -41,11 +41,10 @@ public class LinkedList<K, V> {
 	}
 
 	/**
-	 * method to print all the nodes
-	 * 
-	 * @return
+	 * @return all the content of linked list in string format
 	 */
-	public String printAllNodes() {
+
+	public String toString() {
 		return "My node[ " + head + " ]";
 	}
 

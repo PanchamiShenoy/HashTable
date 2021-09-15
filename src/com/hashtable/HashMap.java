@@ -8,7 +8,7 @@ public class HashMap<K, V> {
 	}
 
 	/**
-	 * method to add new node to linklist
+	 * method to add new node to linkedlist
 	 * 
 	 * @param key
 	 * @param value
@@ -24,8 +24,9 @@ public class HashMap<K, V> {
 	}
 
 	/**
-	 * method to return the value of corresponding key
-	 * @param
+	 * method to get value related to given key
+	 * 
+	 * @param key
 	 * @return
 	 */
 	public V get(K key) {
@@ -36,9 +37,8 @@ public class HashMap<K, V> {
 		return myMapNode.getValue();
 	}
 
-	@Override
+	// @Override
 	public String toString() {
-		return "MyHashMap [myLinkedList=" + myLinkedList.printAllNodes() + "]";
+		return "MyHashMap [myLinkedList=" + myLinkedList + "]";
 	}
-
 }
