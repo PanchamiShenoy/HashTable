@@ -18,6 +18,8 @@ public class LinkedHashMaptest {
 			LinkedHashMap.add(str, value);
 		}
 		System.out.println(LinkedHashMap);
+		LinkedHashMap.deleteWord("avoidable");
+		System.out.println(LinkedHashMap);
 
 	}
 }
