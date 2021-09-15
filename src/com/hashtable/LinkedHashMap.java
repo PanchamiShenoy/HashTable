@@ -17,8 +17,9 @@ public class LinkedHashMap<K, V> {
 
 	/**
 	 * method to return bucket index using hashcode
-	 * @param 
-	 * @return 
+	 * 
+	 * @param
+	 * @return
 	 */
 	public int getBucketIndex(K key) {
 		int hashCode = Math.abs(key.hashCode());
@@ -29,7 +30,8 @@ public class LinkedHashMap<K, V> {
 
 	/**
 	 * method to add new or update key value pair
-	 * @param key     
+	 * 
+	 * @param key
 	 * @param value
 	 */
 	public void add(K key, V value) {
@@ -47,10 +49,31 @@ public class LinkedHashMap<K, V> {
 		myMapNode.setValue(value);
 	}
 
+	/*
+	 * method to delete the specified key
+	 */
+	public void deleteWord(K key) {
+		int index = getBucketIndex(key);
+		LinkedList<K, V> myLinkedList = bucketList.get(index);
+		if (myLinkedList == null) {
+			return;
+		}
+		MapNode<K, V> myMapNode = myLinkedList.search(key);
+		if (myMapNode == null) {
+			return;
+		}
+
+		else {
+			myLinkedList.pop(myMapNode);
+			System.out.println("Deleted successfully");
+		}
+	}
+
 	/**
 	 * method to return value associated with key
-	 * @param 
-	 * @return 
+	 * 
+	 * @param
+	 * @return
 	 */
 	public V get(K key) {
 		int index = getBucketIndex(key);

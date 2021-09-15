@@ -48,4 +48,19 @@ public class LinkedList<K, V> {
 		return "My node[ " + head + " ]";
 	}
 
+	public void pop(MapNode<K, V> tempNode) {
+		// TODO Auto-generated method stub
+		MapNode<K, V> prev = head;
+		MapNode<K, V> cur = head;
+		while (cur != null || cur.getNext() != null) {
+			if (tempNode.getKey() == cur.getKey()) {
+				break;
+			}
+			prev = cur;
+			cur = (MapNode<K, V>) cur.getNext();
+		}
+		MapNode<K, V> next = (MapNode<K, V>) cur.getNext();
+		prev.setNext(next);
+	}
+
 }
